@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.zuulako</groupId>
+    <artifactId>zuulako</artifactId>
+    <name>org.zuulako.bom</name>
+    <url>https://github.com/nabilblk/zuulako</url>
+    <description>A portal application to Manage Zuul gateway</description>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <repositories>
+        <repository>
+            <id>oss</id>
+            <name>oss</name>
+            <url>https://oss.sonatype.org/content/repositories/releases</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>oss-snapshots</id>
+            <name>oss-snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>http://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-releases</id>
+            <name>Spring Releases</name>
+            <url>http://repo.spring.io/plugins-release</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+
+    </repositories>
+
+    <scm>
+        <connection>scm:git:https://github.com/nabilblk/zuulako</connection>
+        <developerConnection>scm:git:https://github.com/nabilblk/zuulako</developerConnection>
+        <url>https://github.com/nabilblk/zuulako</url>
+        <tag>v0.0.1</tag>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <uniqueVersion>true</uniqueVersion>
+            <id>ossrh</id>
+            <name>Zuulako Releases</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            <layout>default</layout>
+        </repository>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <organization>
+        <name>OCTO Technology Maroc</name>
+        <url>http://www.octo.com</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <name>Nabil Belakbir</name>
+            <email>nbelakbir@octo.com</email>
+            <organization>OCTO Technology Maroc</organization>
+            <organizationUrl>http://www.octo.com</organizationUrl>
+        </developer>
+        <developer>
+            <name>Landry Defo Kuate</name>
+            <email>ldefokuate@octo.com</email>
+            <organization>OCTO Technology Maroc</organization>
+            <organizationUrl>http://www.octo.com</organizationUrl>
+        </developer>
+        <developer>
+            <name>Marwane Belahcen</name>
+            <email>mbelahcen@octo.com</email>
+            <organization>OCTO Technology Maroc</organization>
+            <organizationUrl>http://www.octo.com</organizationUrl>
+        </developer>
+        <developer>
+            <name>Yassir El Ouarma</name>
+            <email>yelouarma@octo.com</email>
+            <organization>OCTO Technology Maroc</organization>
+            <organizationUrl>http://www.octo.com</organizationUrl>
+        </developer>
+        <developer>
+            <name>Abdelhaq El Aibi</name>
+            <email>aelaibi@octo.com</email>
+            <organization>OCTO Technology Maroc</organization>
+            <organizationUrl>http://www.octo.com</organizationUrl>
+        </developer>
+    </developers>
+</project>
