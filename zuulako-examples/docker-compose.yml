@@ -1,0 +1,68 @@
+version: "2"
+services:
+  config-service:
+    container_name: config-service
+    image: zuulako/config-service-example
+    links:
+     - discovery-service-example
+    depends_on:
+     - discovery-service-example
+    environment:
+     - SPRING_PROFILES_ACTIVE=docker
+    ports:
+     - 8888:8888
+  discovery-service-example:
+    container_name: discovery-service-example
+    image: zuulako/discovery-service-example
+    ports:
+     - 8761:8761
+    environment:
+     - SPRING_PROFILES_ACTIVE=docker
+  edge-service-example:
+    container_name: edge-service-example
+    image: zuulako/edge-service-example
+    ports:
+     - 9999:9999
+    links:
+     - discovery-service-example
+     - config-service-example
+    depends_on:
+     - discovery-service
+    environment:
+     - SPRING_PROFILES_ACTIVE=docker
+  microservice-service-1:
+    container_name: microservice-service-1
+    image: zuulako/microservice-service-1
+    links:
+     - discovery-service-example
+     - config-service-example
+    depends_on:
+     - discovery-service-example
+    environment:
+     - SPRING_PROFILES_ACTIVE=docker
+  microservice-service-2:
+    container_name: microservice-service-2
+    image: zuulako/microservice-service-2
+    links:
+     - discovery-service-example
+     - config-service-example
+    depends_on:
+     - discovery-service-example
+    environment:
+     - SPRING_PROFILES_ACTIVE=docker
+  scope:
+    container_name: weave-scope
+    volumes:
+      - "/var/run/:/var/run:rw"
+    command:
+      - "--probe.docker"
+      - "true"
+    image: weaveworks/scope:latest
+    network_mode: "host"
+    pid: "host"
+    ports:
+      - "4040:4040"
+    privileged: true
+    tty: true
+    labels:
+      - "works.weave.role=system"
