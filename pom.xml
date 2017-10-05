@@ -6,6 +6,9 @@
     <artifactId>zuulako</artifactId>
     <name>org.zuulako.bom</name>
     <url>https://github.com/nabilblk/zuulako</url>
+    <modules>
+        <module>zuulako-examples</module>
+    </modules>
     <description>A portal application to Manage Zuul gateway</description>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
