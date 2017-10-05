@@ -9,8 +9,6 @@ machine:
     version: oraclejdk8
 
 dependencies:
-  # https://issues.apache.org/jira/browse/MDEP-51 6
-  # Maven will error on a fresh repo becuase fd-common does not exist; it hasn't been built yet, so let's do that
   override:
     - mvn clean package dependency:go-offline -DskipTests=true
 
