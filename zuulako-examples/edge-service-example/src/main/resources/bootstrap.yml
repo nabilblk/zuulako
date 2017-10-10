@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: edge-service
+server:
+  port: 9999
+management:
+  security:
+    enabled: false
+---
+spring:
+  profiles: docker
+  cloud:
+    config:
+      uri: http://config-service:8888
+---
+spring:
+  profiles: default
+  cloud:
+    config:
+      uri: http://localhost:8888

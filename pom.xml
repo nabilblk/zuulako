@@ -6,12 +6,30 @@
     <artifactId>zuulako</artifactId>
     <name>org.zuulako.bom</name>
     <url>https://github.com/nabilblk/zuulako</url>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.7.RELEASE</version>
+        <relativePath/>
+    </parent>
+
     <modules>
         <module>zuulako-examples</module>
+        <module>server</module>
+        <module>plugins</module>
     </modules>
+
     <description>A portal application to Manage Zuul gateway</description>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <docker.image.prefix>zuulako</docker.image.prefix>
+        <docker.plugin.version>0.3.258</docker.plugin.version>
+    </properties>
 
     <repositories>
         <repository>
@@ -76,6 +94,18 @@
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Dalston.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <organization>
         <name>OCTO Technology Maroc</name>

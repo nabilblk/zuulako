@@ -1,7 +1,7 @@
 version: "2"
 services:
-  config-service:
-    container_name: config-service
+  config-service-example:
+    container_name: config-service-example
     image: zuulako/config-service-example
     links:
      - discovery-service-example
@@ -27,12 +27,12 @@ services:
      - discovery-service-example
      - config-service-example
     depends_on:
-     - discovery-service
+     - discovery-service-example
     environment:
      - SPRING_PROFILES_ACTIVE=docker
-  microservice-service-1:
-    container_name: microservice-service-1
-    image: zuulako/microservice-service-1
+  microservice-1:
+    container_name: microservice-1
+    image: zuulako/microservice-1
     links:
      - discovery-service-example
      - config-service-example
@@ -40,9 +40,9 @@ services:
      - discovery-service-example
     environment:
      - SPRING_PROFILES_ACTIVE=docker
-  microservice-service-2:
-    container_name: microservice-service-2
-    image: zuulako/microservice-service-2
+  microservice-2:
+    container_name: microservice-2
+    image: zuulako/microservice-2
     links:
      - discovery-service-example
      - config-service-example
