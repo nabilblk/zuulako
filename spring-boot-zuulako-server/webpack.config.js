@@ -1,6 +1,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
+const express = require('express');
 
 const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
@@ -36,7 +37,7 @@ var common = {
                 loader: "babel-loader",
                 include: [__dirname],
                 options: {
-                    presets: ["es2015", "react"]
+                    presets: ["env", "react"]
                 }
             }]
         }
@@ -52,15 +53,13 @@ if (TARGET === 'start') {
     module.exports = merge(common, {
         devServer: {
             port: 9090,
-            proxy: {
-                '/': {
-                    target: 'http://localhost:8080',
-                    secure: false,
-                    prependPath: false
-                }
-            },
             publicPath: 'http://localhost:9090/',
-            historyApiFallback: true
+            historyApiFallback: true,
+            before(app){
+                let join = path.join(__dirname, '/src/main/resources/static');
+                console.log(join)
+                app.use(express.static(join))
+            }
         },
         devtool: 'source-map'
     });
