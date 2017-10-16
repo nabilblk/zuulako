@@ -16,8 +16,9 @@
 
     <modules>
         <module>zuulako-examples</module>
-        <module>server</module>
         <module>plugins</module>
+        <module>spring-boot-zuulako-starter</module>
+        <module>spring-boot-zuulako-server</module>
     </modules>
 
     <description>A portal application to Manage Zuul gateway</description>
