@@ -23,6 +23,7 @@
         <module>edge-service-example</module>
         <module>microservice-1</module>
         <module>microservice-2</module>
+        <module>zuulako-service-example</module>
     </modules>
 
 </project>
