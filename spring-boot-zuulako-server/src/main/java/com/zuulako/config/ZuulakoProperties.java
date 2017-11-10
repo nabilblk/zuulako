@@ -8,7 +8,7 @@ public class ZuulakoProperties {
     private String contextPath;
 
     public String getContextPath() {
-        return contextPath;
+        return contextPath != null ? contextPath : "/zuulako";
     }
 
     public void setContextPath(String contextPath) {
