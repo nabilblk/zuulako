@@ -1,6 +1,6 @@
 spring:
   application:
-    name: crm-service
+    name: microservice-2
 ---
 spring:
   profiles: docker

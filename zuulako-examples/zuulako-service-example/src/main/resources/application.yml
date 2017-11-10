@@ -1,8 +1,11 @@
+spring:
+  application:
+    name: zuulako-service-example
 management:
   security:
     enabled: false
 server:
-  port: 9002
+  port: 8182
 ---
 spring:
   profiles: docker
